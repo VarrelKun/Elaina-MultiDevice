@@ -1,48 +1,23 @@
-
-import fetch from 'node-fetch'
-import axios from 'axios'
-import fs from 'fs'
-
-let handler = async (m, { conn, args, command }) => {
-	let ppown = 'https://telegra.ph/file/f124c0ce3b165014f02ee.jpg'
-let teksbio = `
-
-*ɴᴀᴍᴇ:* GopalAsu 
-*ᴀɢᴇ:* 19ᵗʰ
-*sᴛᴀᴛᴜs:* single 
-
-*ʙɪʀᴛʜᴅᴀʏ:* 27 Jan 2003
-*ᴀᴅᴅʀᴇss:* Indonesia, Jawa Timur, Surabaya`
-let foot = `
-📷 *Instagram:*
-   ╰► ${sig}
-🐈 *Github:* 
-  ╰► ${sgh}
-🥏 *Whatsapp*
-  ╰► wa.me/${nomorown}`
-
-const fload = {
-    key : {
-    remoteJid: 'status@broadcast',
-    participant : '0@s.whatsapp.net'
-    },
-    message: {
-    orderMessage: {
-    itemCount : 666,
-    status: 1,
-    surface : 1,
-    message: 'Nih kak Ownerku yang ganteng',
-    orderTitle: `▮Menu ▸`,
-    thumbnail: await(await fetch(ppown)).buffer(), 
-    sellerJid: '0@s.whatsapp.net' 
-    }
-    }
-    }
-    await conn.sendButton(m.chat, teksbio, foot, ppown, [['ᴅᴏɴᴀsɪ', '.donasi']], fload)
-
-
+// Source https://github.com/sadteams/bot-md
+const delay = time => new Promise(res => setTimeout(res, time))
+let handler = async(m, { conn }) => {
+	conn.p = conn.p ? conn.p : {}
+	let id = m.chat
+	conn.p[id] = [
+	await conn.sendKontak(m.chat, global.owner, m, { contextInfo: { externalAdReply :{
+    showAdAttribution: true,
+     }}
+  })
+	]
+	await delay(100)
+  return conn.sendMessage(m.chat, { text: `Hello @${m.sender.split('@')[0]}, That's My Owner Don't Spam Okay? 😃`, mentions: [m.sender] }, { quoted: conn.p[id][0]
+  })
+  await delay(100)
+  return delete conn.p[id]
 }
+
 handler.help = ['owner']
 handler.tags = ['info']
-handler.command = ['creator', 'owner']
+handler.command = /^(owner|creator)$/i
+
 export default handler
