@@ -67,7 +67,7 @@ global.nameown = 'GOPALA5U' // Nama Owner
 
 /*============== STAFF ==============*/
 global.owner = [
-  ['6285954184111', 'Gopala5u', true] //Ganti jd nomormu sama Namamu
+  [ "6285954184111", "GOPALASU", "ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ", "varrelkun@gmail.com", true ] //Ganti jd nomormu sama Namamu
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
