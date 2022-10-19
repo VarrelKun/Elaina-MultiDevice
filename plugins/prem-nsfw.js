@@ -25,7 +25,7 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
 
 //> Default
 let res = 'https://api.lolhuman.xyz/api/random/nsfw/'
-let api = '?apikey=SGWN'
+let api = '?apikey=HitomiBot'
 
 let a = 'https://revita.herokuapp.com/api/nsfw/'
 let b = '?apikey=ApiRevita'
@@ -39,7 +39,7 @@ let zapi = '?apikey=APIKEY'
 
 //> Lolhuman
 let resl = 'https://api.lolhuman.xyz/api/random2/nsfw/'
-let apil = '?apikey=SGWN'
+let apil = '?apikey=HitomiBot'
 
 //> Xteam
 let xres = 'https://xteam.xyz/randomimage/'
