@@ -34,7 +34,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         conn.sendFile(m.chat, stiker, 'sticker.webp', '', false, {asSticker: true}, {quoted: fgif})
 }
 handler.tags = ['action']
-handler.help = ['kick <tag user>']
-handler.command = /^(kick)$/i
+handler.help = ['kicked <tag user>']
+handler.command = /^(kicked)$/i
 
 export default handler
