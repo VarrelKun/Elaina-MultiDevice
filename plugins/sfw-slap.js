@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!jid) throw `Tag Someone.`;
     jid = jid.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
     let data = (await conn.onWhatsApp(jid))[0] || {};
-	let gb = await (await fetch('https://raw.githubusercontent.com/BlackGopal/database/main/sfw/blush.json')).json()
+	let gb = await (await fetch('https://raw.githubusercontent.com/BlackGopal/database/main/sfw/slap.json')).json()
     let neko = pickRandom(gb)
 	     let stiker = await sticker(null, neko, global.packname, global.author)
 	
