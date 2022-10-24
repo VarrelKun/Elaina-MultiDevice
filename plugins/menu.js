@@ -25,11 +25,12 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
 	let tags
 	let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'anime', 'image', 'update', 'maker', 'apk', 'edukasi', 'news', 'random', 'xp', 'islamic', 'stiker', 'rpg', 'virus', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'nulis', 'tools', 'fun', 'database','quran', 'vote', 'audio', 'jadibot', 'info', 'owner', 'nocategory']
+  let arrayMenu = ['all', 'anime', 'action', 'image', 'update', 'maker', 'apk', 'edukasi', 'news', 'random', 'xp', 'islamic', 'stiker', 'rpg', 'virus', 'kerangajaib', 'quotes', 'admin', 'group', 'premium', 'internet', 'anonymous', 'nulis', 'tools', 'fun', 'database','quran', 'vote', 'audio', 'jadibot', 'info', 'owner', 'nocategory']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
   'main': 'Main',
   'apk': 'Apk',
+  'action': 'Action RP',
   'image': 'Image',
   'game': 'Game',
   'rpg': 'RPG Games',
@@ -89,6 +90,9 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
   }
   if (teks == 'kerangajaib') tags = {
     'kerang': 'Kerang Ajaib'
+  }
+  if (teks == 'action') tags = {
+    'action': 'Action RP'
   }
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
@@ -190,6 +194,11 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
     title: `${htki} MAIN ${htka}`,
 	rows: [
 	    {title: `⚠️ Information ⚠️`, rowId: ".gopal"},
+	]
+	},{
+		title: `${htki} 🔥NEW UPDATE🔥 ${htka}`,
+	rows: [
+	    {title: `╿🌞╽Action`, rowId: ".? action", description: "⤷ Menampilkan Action command BOT"},
 	]
 	},{
 	title: `${htki} MENU ${htka}`,
